@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: $Whoami
 icon: fas fa-info-circle
 order: 4
 ---
@@ -10,7 +10,7 @@ order: 4
 
 This is ValluvarSploit. I am an aspirant Ethical HACKer, Security RESEARCHer, Bug Bounty HUNTer, Penetration TESTer, OSINTer, and CTF PLAYer. I used to solve challenges on Hackthebox, Tryhackme, Pentesterlab and Portswigger Academy.
 
-On this blog, I will publish write-ups on CTF and other challenges, Bug bounty reports, Hacking concepts, and Hacking Tool cheatsheets.
+On this blog, I will publish write-ups about my Bug bounty reports and walkthroughs on CTF challenges, Tryhackme, and Hackthebox labs.
 
 I hope you will enjoy my post.
 
