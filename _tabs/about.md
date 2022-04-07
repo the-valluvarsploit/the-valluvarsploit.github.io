@@ -23,5 +23,5 @@ Follow me on:
 [Github](https://github.com/the-valluvarsploit){:target="_blank"}
 [Linkedin](https://www.linkedin.com/in/alexandar-t-345230220){:target="_blank"}
 
-Warm Regards,
+Warm Regards,  
 ValluvarSploit
