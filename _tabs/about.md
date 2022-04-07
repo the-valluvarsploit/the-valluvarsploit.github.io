@@ -6,8 +6,10 @@ order: 4
 
 <!-- {: .prompt-tip } -->
 
-<img src="/assets/avatar/avatar.jpg">
+<img src="/assets/avatar/avatar.jpg" >
 
+Hello Readers, 
+ 
 This is ValluvarSploit. I am an aspirant Ethical HACKer, Security RESEARCHer, Bug Bounty HUNTer, Penetration TESTer, OSINTer, and CTF PLAYer. I used to solve challenges on Hackthebox, Tryhackme, Pentesterlab and Portswigger Academy.
 
 On this blog, I will publish write-ups about my Bug bounty reports and walkthroughs on CTF challenges, Tryhackme, and Hackthebox labs.
