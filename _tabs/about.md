@@ -8,9 +8,9 @@ order: 4
 
 <img src="/assets/avatar/avatar.jpg">
 
-This is ValluvarSploit. I am an aspirant Ethical Hacker, Bug Bounty Hunter, Penetration Tester, OSINTer and CTF player. I used to solve challenges on Hackthebox, Tryhackme, Pentesterlab and Portswigger Academy. 
+This is ValluvarSploit. I am an aspirant Ethical HACKer, Security RESEARCHer, Bug Bounty HUNTer, Penetration TESTer, OSINTer, and CTF PLAYer. I used to solve challenges on Hackthebox, Tryhackme, Pentesterlab and Portswigger Academy.
 
-On this blog, i will publish write-ups on CTF and other challenges, Bug bounty report, Hacking concepts and Hacking Tool cheatsheets.
+On this blog, I will publish write-ups on CTF and other challenges, Bug bounty reports, Hacking concepts, and Hacking Tool cheatsheets.
 
 I hope you will enjoy my post.
 
@@ -23,8 +23,5 @@ Follow me on:
 [Github](https://github.com/the-valluvarsploit){:target="_blank"}
 [Linkedin](https://www.linkedin.com/in/alexandar-t-345230220){:target="_blank"}
 
-Warm Regards,  
+Warm Regards,
 ValluvarSploit
-
-
-
