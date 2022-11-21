@@ -28,12 +28,16 @@ amass enum -passive -d redacted.com -config config.ini -o amass_passive_subs.txt
 gobuster dns -d redacted.com -w wordlist.txt --show-cname --no-color -o gobuster_subs.txt
 ```
 
-After enumerating subdomains, removed duplicate entries and merged them into a single file (subdomains.txt) using the [Anew](https://github.com/tomnomnom/anew) tool. Then passed the subdomains.txt file to my cname.sh shell script for enumerating CNAME records. 
+After enumerating subdomains, removed duplicate entries and merged them into a single file (`subdomains.txt`) using the [Anew](https://github.com/tomnomnom/anew) tool.
 
 ```bash
 # Merging subdomains into one file
 cat google_subs.txt amass_passive_subs.txt gobuster_subs.txt | anew subdomains.txt
+```
 
+Then passed the subdomains.txt file to my cname.sh shell script, enumerated CNAME records and stored in `cnames.txt`. 
+
+```bash
 # Enumerate CNAME records
 ./cname.sh -l subdomains.txt -o cnames.txt
 
@@ -41,7 +45,7 @@ cat google_subs.txt amass_passive_subs.txt gobuster_subs.txt | anew subdomains.t
 httpx -l subdomains.txt -cname cnames.txt
 ```
 
-Then passed the subdomains.txt file to the HTTPX tool for probing live websites.
+Then passed the subdomains.txt file to the [HTTPX](https://github.com/projectdiscovery/httpx) tool. probed live websites and stored in `servers_details.txt`.
 
 ```bash
 # Probe for live HTTP/HTTPS servers
@@ -57,7 +61,7 @@ $ dig next.redacted.com CNAME
 
 ![dig command](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_dig_command.png)
 
-This subdomain had two CNAME records. The first CNAME record was pointing to webflow.io domain and the second CNAME record was pointing to fastly.net domain. Whenever we have multiple CNAME records, the first CNAME record will redirect us to next CNAME record and so on. 
+This subdomain had two CNAME records. The first CNAME record was pointing to `webflow.io` domain and the second CNAME record was pointing to `fastly.net` (Fastly Service) domain. Whenever we have multiple CNAME records, the first CNAME record will redirect us to next CNAME record and so on. The redirection would continue until we reach last CNAME record.
 
 I started analyzing the servers_details.txt file for interesting stuff and found this line. Notice status code and website title.
 
@@ -65,7 +69,7 @@ I started analyzing the servers_details.txt file for interesting stuff and found
 https://next.redacted.com [500] [246] [Fastly error: unknown domain next.redacted.com]
 ```
 
-The status code was 500 and the title was “Fastly error: unknown domain next.redacted.com”.  I came across this Fastly error many times before and knew that Fastly is not completely vulnerable. It's vulnerable only when certain conditions are met, called the edge case.
+The status code was `500` and the title was `Fastly error: unknown domain next.redacted.com`. By taking a look at CNAME record (`redacted.fastly.net`) and website fingerprint `Fastly error: unknown domain`, we can confirm that this is Fastly Subdomain Takeover. If a website has this fingerprint then it may be vulnerable. However, I came across this Fastly fingerprint many times before and it was not vulnerable. It's vulnerable only when certain conditions are met, so it's an edge case.
 
 Most of the time we cannot takeover Fastly service. For example, below case,
 
