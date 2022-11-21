@@ -73,7 +73,7 @@ The status code was `500` and the title was `Fastly error: unknown domain next.r
 
 Most of the time we cannot takeover Fastly service. For example, below case,
 
-![dig command](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_fastly_error.png)
+![Fastly Error](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_fastly_error.png)
 
 But if the domain is not already taken by another customer then we can claim the domain and takeover the subdomain completely.
 
@@ -87,7 +87,7 @@ Steps to detect if fastly is vulnerable or not,
 
 I was expecting the error message (domain is already taken by another customer) to appear but there was no error message. I was redirected to the next page “Hosts page”. It was a surprise to me.
 
-![image](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_domains_added.png)
+![Domain Added](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_domains_added.png)
 
 ## PoC CREATION STEPS
 Once the vulnerability was confirmed, I logged into my VPS server and created a directory called `hosting`. Then within the `hosting` directory created a simple HTML file called `index.html`.
@@ -112,16 +112,16 @@ $ python3 -m http.server 80
 
 Then I went to the Fastly dashboard and Added the public IP address of my VPS server in the Hosts page.
 
-![reward](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_hosts_added.png)
+![Hosts Added](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_hosts_added.png)
 
 After a few seconds, I opened up a new browser window and visited `http://next.redacted.com/index.html` page. My PoC file was rendered successfully. I have written a detailed report and submitted it on HackerOne. 
 
-![reward](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_poc.png)
+![poc](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_poc.png)
 
 ## LEARNING BY MONITORING SERVER LOGS
 I kept my Fastly service running for 3 days and monitored server logs for sensitive information. It was fun watching other bug hunters methodology.
 
-![reward](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_monitoring.png)
+![monitoring](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_monitoring.png)
 
 ## REWARD
 My report was triaged as a HIGH severity vulnerability and rewarded $2000 within 10 days.
@@ -130,7 +130,7 @@ My report was triaged as a HIGH severity vulnerability and rewarded $2000 within
 
 ## TAKEAWAYS
 1. Revisit your old targets at least once in 6 months.
-2. Subdomain Enumeration is key.
+2. Subdomain Enumeration is key. Enumerate subdomains as much as possible.
 3. Don’t give up.
 
 Thanks for taking time to read my post.
