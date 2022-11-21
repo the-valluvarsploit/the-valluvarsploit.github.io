@@ -113,6 +113,8 @@ Then I went to the Fastly dashboard and Added the public IP address of my VPS se
 ## REWARD
 My report was triaged as a HIGH severity vulnerability and rewarded $2000 within 10 days.
 
+![reward](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_reward.png)
+
 ## TAKEAWAYS
 1. Revisit your old targets at least once in 6 months.
 2. Subdomain Enumeration is key.
