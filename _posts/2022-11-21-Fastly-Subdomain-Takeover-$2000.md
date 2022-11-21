@@ -47,6 +47,8 @@ I started analyzing the cnames.txt file and found one subdomain that was pointin
 $ dig next.redacted.com CNAME
 ```
 
+![dig command](/assets/posts_assets/2022-11-21-Fastly-Subdomain-Takeover/dig_command.png)
+
 
 
 Warm Regards,  
