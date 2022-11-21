@@ -85,10 +85,10 @@ Steps to detect if fastly is vulnerable or not,
 2. Logged in to my Fastly Dashboard and clicked on the "Create a Delivery Service" button.
 3. Entered the target subdomain (next.redacted.com) and clicked on Add button.
 
-I was expecting the error message (domain is already taken by another customer) but there was no error message. I was redirected to the next page “Hosts page”. I was surprised by seeing this.
+I was expecting the error message (domain is already taken by another customer) to appear but there was no error message. I was redirected to the next page “Hosts page”. It was surprise to me.
 
 ## PoC CREATION STEPS
-Once the vulnerability was confirmed, I logged into my VPS server and created a directory called hosting. Then within the hosting directory created a simple HTML file called index.html.
+Once the vulnerability was confirmed, I logged into my VPS server and created a directory called `hosting`. Then within the `hosting` directory created a simple HTML file called `index.html`.
 
 ```bash
 $ mkdir hosting
@@ -96,19 +96,19 @@ $ cd hosting
 $ nano index.html
 ```
 
-Index.html file contained below code.
+The `index.html` file contains below code,
 
 ```html
 <h1>ValluvarSploit PoC</h1>
 ```
 
-After that, I started a simple Python web server in the current directory
+After that, I started a simple Python web server on port 80 within the current working directory,
 
 ```bash
 $ python3 -m http.server 80
 ```
 
-After that, I started a simple Python web server in the current directory. Then I went to the Fastly dashboard and Added the public IP address of the VPS server in the hostname. After a few seconds, I opened up a new browser window and visited http://next.redacted.com/index.html page. My PoC file was rendered successfully. I have written a detailed report and submitted it. I kept my Fastly service running for 3 days and monitored server logs for sensitive information.
+Then I went to the Fastly dashboard and Added the public IP address of my VPS server in the Hosts page. After a few seconds, I opened up a new browser window and visited `http://next.redacted.com/index.html` page. My PoC file was rendered successfully. I have written a detailed report and submitted it on HackerOne. I kept my Fastly service running for 3 days and monitored server logs for sensitive information. It was fun watching other bug hunters methodology.
 
 ## REWARD
 My report was triaged as a HIGH severity vulnerability and rewarded $2000 within 10 days.
