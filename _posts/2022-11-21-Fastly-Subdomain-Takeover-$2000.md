@@ -110,7 +110,12 @@ After that, I started a simple Python web server on port 80 within the current w
 $ python3 -m http.server 80
 ```
 
-Then I went to the Fastly dashboard and Added the public IP address of my VPS server in the Hosts page. After a few seconds, I opened up a new browser window and visited `http://next.redacted.com/index.html` page. My PoC file was rendered successfully. I have written a detailed report and submitted it on HackerOne. I kept my Fastly service running for 3 days and monitored server logs for sensitive information. It was fun watching other bug hunters methodology.
+Then I went to the Fastly dashboard and Added the public IP address of my VPS server in the Hosts page. After a few seconds, I opened up a new browser window and visited `http://next.redacted.com/index.html` page. My PoC file was rendered successfully. I have written a detailed report and submitted it on HackerOne. 
+
+## LEARNING BY MONITORING SERVER LOGS
+I kept my Fastly service running for 3 days and monitored server logs for sensitive information. It was fun watching other bug hunters methodology.
+
+![reward](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_monitoring.png)
 
 ## REWARD
 My report was triaged as a HIGH severity vulnerability and rewarded $2000 within 10 days.
