@@ -85,7 +85,9 @@ Steps to detect if fastly is vulnerable or not,
 2. Logged in to my Fastly Dashboard and clicked on the "Create a Delivery Service" button.
 3. Entered the target subdomain (next.redacted.com) and clicked on Add button.
 
-I was expecting the error message (domain is already taken by another customer) to appear but there was no error message. I was redirected to the next page “Hosts page”. It was surprise to me.
+I was expecting the error message (domain is already taken by another customer) to appear but there was no error message. I was redirected to the next page “Hosts page”. It was a surprise to me.
+
+![image](/assets/posts_assets/2022-04-07-Meow/fastly_subdomain_takeover_domains_added.png)
 
 ## PoC CREATION STEPS
 Once the vulnerability was confirmed, I logged into my VPS server and created a directory called `hosting`. Then within the `hosting` directory created a simple HTML file called `index.html`.
