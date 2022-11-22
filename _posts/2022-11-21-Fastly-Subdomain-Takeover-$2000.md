@@ -8,7 +8,7 @@ tags: BugBounty
 My name is Alexandar Thangavel AKA ValluvarSploit, a full-time bug hunter and trainer. I love recon. I am the founder and CEO of ValluvarSploit Security. At ValluvarSploit Security, we are providing Bug Bounty training in  one-to-one live sessions. For more information, please check our [LinkedIn page](https://www.linkedin.com/company/valluvarsploit-security).
 
 ## OBJECTIVE
-Today, I am going to share how I found Fastly subdomain takeover vulnerability and earn my first three digits bounty. Let’s get started.
+Today, I am going to share how I found Fastly subdomain takeover vulnerability and earn my first four digits bounty. Let’s get started.
 
 ## BACKSTORY
 This was started on October 2nd, 2022 Sunday. The day started as usual. I woke up at 6 AM, finished routine work, checked my Mobile data balance (1.3 GB was remaining), enabled my Mobile Hotspot, connected my Laptop, and resumed hunting on a private program. I spent a few hours on the target application but found nothing so took a short break. I used to revisit my old private programs at least once in six months. So, I reviewed my private invites, picked an old program and started performing subdomain enumeration (Let’s call our target as `redacted.com`).
